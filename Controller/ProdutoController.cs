@@ -21,5 +21,14 @@ namespace exemplo_mvc.Controller
 
             produtoView.Listar(produtos);
         }
+        public void CadastrarProduto()
+        {
+            Produto novoProduto = produtoView.Cadastrar();
+
+            produto.Inserir(novoProduto);
+            
+            ListarProdutos();
+        }
+
     }
 }

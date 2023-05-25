@@ -34,9 +34,9 @@ namespace exemplo_mvc.Model
             }
         }
 
-        public List<Produto> Ler() 
+        public List<Produto> Ler()
         {
-            List<Produto> produtos = new List<Produto>();    
+            List<Produto> produtos = new List<Produto>();
 
             string[] linhas = File.ReadAllLines(PATH);
 
@@ -56,6 +56,18 @@ namespace exemplo_mvc.Model
             return produtos;
         }
 
+        public string PrepararLinhasCSV(Produto p)
+        {
+            return $"{p.Codigo};{p.Nome};{p.Preco}";
+        }
 
-}
+        public void Inserir(Produto p)
+        {
+            string[] linhas = {PrepararLinhasCSV(p)};
+
+            File.AppendAllLines(PATH, linhas);
+        }
+
+
+    }
 }

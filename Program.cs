@@ -7,8 +7,6 @@ ProdutoController controller = new ProdutoController();
 
 controller.ListarProdutos();
 
-public string Preparar
-
 
 
 
